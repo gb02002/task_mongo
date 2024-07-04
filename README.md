@@ -29,7 +29,7 @@
 4. Download depends: pip install > requirements.txt
 5. Rename .env.my to .env and configure it
 
-6. Start by: python code/main
+6. Start by: cd /code & python main
 
 ### Demo:
 

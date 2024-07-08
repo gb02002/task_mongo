@@ -4,6 +4,7 @@ import json, logging
 from exceptions import NotCorrectMessage, EmptyMessage
 
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
 
 
 def validate_input(data) -> dict[str] | tuple[str, bool]:
@@ -38,6 +39,7 @@ def check_message(message: Message) -> dict[str] | tuple[str, Exception]:
     """Проверка формата сообщения, если прошел возвращает словарь, нет - тупл"""
     try:
         if message.text:
+            logger.debug(message.text)
             data_dict = validate_input(message.text)
             if data_dict:
                 return data_dict
